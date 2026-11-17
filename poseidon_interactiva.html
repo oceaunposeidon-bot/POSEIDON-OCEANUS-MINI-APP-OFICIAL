@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSEIDÓN OCEANUS</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A1628;color:#f6efdd;font-family:'Segoe UI',Arial,sans-serif}
+header{background:#0D1B2A;padding:12px 20px;position:sticky;top:0;z-index:100;border-bottom:2px solid #D4AF37;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{color:#D4AF37;font-size:22px;font-weight:bold}
+nav button{background:transparent;border:1px solid #00B4D8;color:#00B4D8;padding:6px 14px;margin:4px;border-radius:20px;cursor:pointer}
+nav button.active,nav button:hover{background:#00B4D8;color:#000}
+.hero{text-align:center;padding:50px 20px;background:linear-gradient(180deg,#0A1628,#10233a)}
+.hero h1{font-size:clamp(28px,5vw,40px);color:#00B4D8}
+.seccion{display:none;padding:30px 20px;max-width:1100px;margin:auto}
+.seccion.activa{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+.card{background:#10233a;border:1px solid #D4AF37;border-radius:12px;padding:16px;text-align:center}
+.paises{display:flex;gap:10px;overflow-x:auto;padding:12px 0}
+.pais{min-width:100px;background:#10233a;border:1px solid #D4AF37;border-radius:8px;padding:10px;text-align:center;flex-shrink:0}
+.boton{background:#D4AF37;color:#000;border:none;padding:12px 26px;border-radius:25px;font-weight:bold;cursor:pointer;margin:6px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:300;align-items:center;justify-content:center}
+.modal-box{background:#10233a;border:2px solid #D4AF37;border-radius:16px;padding:28px;max-width:400px;width:90%;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">POSEIDÓN OCEANUS</div>
+  <nav>
+    <button class="active" onclick="ver('inicio')">INICIO</button>
+    <button onclick="ver('canales')">CANALES</button>
+    <button onclick="ver('planes')">PLANES</button>
+    <button onclick="ver('alianzas')">ALIANZAS</button>
+  </nav>
+</header>
+
+<div id="inicio" class="seccion activa hero">
+  <h1>CENTRO DE CANALES Y ALIANZAS</h1>
+  <p>Conecta · Promociona · Crece · Monetiza</p>
+  <button class="boton" onclick="abrir('registrar')">REGISTRA TU CANAL</button>
+  <button class="boton" onclick="abrir('telegram')">TELEGRAM</button>
+</div>
+
+<div id="canales" class="seccion">
+  <h2 style="color:#D4AF37">DIRECTORIO DE CANALES</h2>
+  <p>Explora comunidades y proyectos aliados.</p>
+</div>
+
+<div id="planes" class="seccion">
+  <h2 style="color:#D4AF37">PLANES DE MEMBRESÍA</h2>
+  <div class="cards">
+    <div class="card"><h3>Gratuito</h3><p>Acceso básico</p></div>
+    <div class="card"><h3>Estándar</h3><p>Más contenido</p></div>
+    <div class="card"><h3>Premium</h3><p>Promoción + recursos</p></div>
+    <div class="card"><h3>VIP</h3><p>Prioridad total</p></div>
+  </div>
+</div>
+
+<div id="alianzas" class="seccion">
+  <h2 style="color:#D4AF37">ALIANZAS</h2>
+  <p>Colaboraciones entre proyectos.</p>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3 id="mtitulo">REGISTRO</h3>
+    <p>Enlace aquí cuando me lo pases.</p>
+    <button class="boton" onclick="cerrar()">CERRAR</button>
+  </div>
+</div>
+
+<script>
+function ver(id){
+  document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('activa'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('activa');
+  event.target.classList.add('active');
+}
+function abrir(t){document.getElementById('mtitulo').textContent=t.toUpperCase();document.getElementById('modal').style.display='flex'}
+function cerrar(){document.getElementById('modal').style.display='none'}
+</script>
+</body>
+</html>
