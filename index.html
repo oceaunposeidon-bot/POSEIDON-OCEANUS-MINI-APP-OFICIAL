@@ -241,6 +241,62 @@ footer .enlaces a{color:var(--oro-claro);font-weight:600}
 .marcela-ctrl .tiempo{display:block}
 @media (min-width:700px){.marcela{grid-template-columns:auto 1fr 1.3fr}.marcela-ctrl{grid-column:auto}}
 
+/* ============ Escritorio: marco dorado de pantalla completa (diseño web) ============ */
+@media (min-width:1100px){
+  :root{--ancho:1640px;--col:46px}
+  .contenedor{width:min(100% - (var(--col) * 2 + 48px),var(--ancho))}
+  body::before,body::after{content:"";position:fixed;top:0;bottom:0;width:var(--col);z-index:35;pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 22px at 50% 0,#fff3c4,transparent 70%) top/100% 60px no-repeat,
+      radial-gradient(ellipse 60% 22px at 50% 100%,#fff3c4,transparent 70%) bottom/100% 60px no-repeat,
+      repeating-linear-gradient(90deg,#4a3408 0 3px,#d4a52c 3px 7px,#fff0b0 7px 9px,#b9820f 9px 14px,#5e440c 14px 15px),
+      linear-gradient(90deg,#3a2806,#e9c560 30%,#fff3c4 50%,#c99a2e 70%,#3a2806);
+    background-blend-mode:screen,screen,overlay,normal;
+    box-shadow:0 0 0 1px #000,0 0 24px rgba(255,200,60,.35),inset 0 0 10px rgba(0,0,0,.6)}
+  body::before{left:0}body::after{right:0}
+  html{border-top:3px solid var(--oro)}
+  .barra{margin-inline:var(--col)}
+  .barra-in{min-height:84px}
+  .marca img{width:64px}.marca-txt{font-size:26px}
+  .iconos a{min-width:86px;font-size:17px;padding:8px 10px}
+  .iconos a svg{font-size:30px}
+  .barra .accion .boton{min-height:50px;font-size:20px;padding:0 26px}
+  body{font-size:19px}
+  section{padding:40px 0 10px}
+  .titulo{font-size:clamp(28px,2.4vw,42px)}
+  .subtitulo{font-size:18px;max-width:900px}
+  .portada{padding-top:18px}
+  .cuadro{--r:22px;border-radius:22px;border-width:3px}
+  .cuadro img{aspect-ratio:16/6}
+  .lema h1{font-size:clamp(36px,3.4vw,58px)}
+  .lema p{font-size:21px;max-width:900px}
+  .acciones .boton{min-height:54px;font-size:20px;max-width:320px}
+  .marco{border-width:2.5px}
+  .marco::after{inset:5px}
+  .carril{grid-auto-columns:minmax(170px,1fr)}
+  .pais .n{font-size:18px}
+  .niveles{gap:18px}
+  .nivel>button,.nivel-txt{min-height:190px}
+  .nivel-txt em{font-size:30px}.nivel-txt b{font-size:25px}.nivel-txt small{font-size:16px}
+  .pestanas{gap:16px}
+  .pestana{padding:18px 8px 16px}.pestana img{width:76px}
+  .pestana b{font-size:23px}.pestana small{font-size:16px}
+  .plan{padding:20px 26px}
+  .herramientas{grid-template-columns:repeat(4,1fr);gap:14px}
+  .herr{min-height:74px;padding:8px 20px 8px 12px}
+  .herr .hi,.herr .hi img{width:54px;height:54px}
+  .herr span:last-child{font-size:18px}
+  .herr span small{font-size:15px}
+  .marcela{padding:22px 28px}.marcela h3{font-size:24px}.marcela p{font-size:17px}
+  .cierre{padding:40px 24px}
+  .player{left:var(--col);right:var(--col);padding-inline:12px}
+  .player-in{min-height:82px}
+  .play{width:62px;height:62px}
+  .pista b{font-size:18px}.pista canvas{height:34px}
+  .tiempo{font-size:17px}
+}
+@media (min-width:1500px){.herramientas{grid-template-columns:repeat(5,1fr)}}
+
 :root{
   --bg:#030c1a; --panel-a:#0a1b34; --panel-b:#05101f; --acento:#00b4ff; --acento2:#0a5cff; --glow:#16b8ff;
   --suave:#a9bdd6;
