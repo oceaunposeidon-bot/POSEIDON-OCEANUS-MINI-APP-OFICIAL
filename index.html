@@ -38,7 +38,7 @@ a.r:hover,a.r:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px #ffd56b
 .lienzo .bloque{display:contents}
 
 /* ===== modo COLUMNA (celular / vertical) ===== */
-.columna{width:100vw;max-width:100vw;height:var(--alto);display:flex;flex-direction:column;gap:5px;padding:calc(env(safe-area-inset-top) + 5px) 6px calc(env(safe-area-inset-bottom) + 5px)}
+.columna{width:100vw;max-width:100vw;height:var(--alto);display:flex;flex-direction:column;justify-content:space-evenly;gap:5px;padding:calc(env(safe-area-inset-top) + 5px) 6px calc(env(safe-area-inset-bottom) + 5px)}
 .columna .bloque{display:flex;gap:4px;min-height:0;width:100%;min-width:0}
 .columna .r{min-width:0;min-height:0}
 .columna .nav .r,.columna .fila .r{flex-basis:0}
@@ -53,7 +53,7 @@ a.r:hover,a.r:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px #ffd56b
 .columna .arenas::-webkit-scrollbar{display:none}
 .columna .arenas .r{flex:none;height:clamp(44px,7.5vh,62px);scroll-snap-align:start}
 .columna .herr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;flex:none}
-.columna .paises{flex:1 1 72px;min-height:58px;max-height:30vh}
+.columna .paises{flex:none;height:clamp(64px,12vh,140px)}
 .columna .audio{flex:none;height:44px}
 .titulo{flex:none;text-align:center;font:italic 900 13px/1 "Playfair Display",Georgia,serif;letter-spacing:.06em;color:#ffd56b;text-shadow:0 1px 0 #6b430a,0 0 10px rgba(255,190,70,.4);text-transform:uppercase}
 .titulo::before,.titulo::after{content:"";display:inline-block;width:34px;height:1.5px;margin:0 8px;vertical-align:middle;background:linear-gradient(90deg,transparent,#e5b04d)}
@@ -66,7 +66,7 @@ a.r:hover,a.r:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px #ffd56b
 .carril::-webkit-scrollbar{display:none}
 .pais{flex:0 0 calc((100% - 7 * .55%) / 8);scroll-snap-align:start;position:relative;border-radius:7px;overflow:hidden;border:1.5px solid #d6a648;
  box-shadow:0 0 8px rgba(255,195,80,.25);cursor:pointer;background:#000}
-.columna .pais{flex-basis:30%}
+.columna .pais{flex-basis:23%}
 .pais img{width:100%;height:100%;object-fit:cover;display:block}
 .pais span{position:absolute;left:0;right:0;bottom:0;padding:10% 2px 3px;text-align:center;background:linear-gradient(transparent,rgba(0,0,0,.88) 40%);
  font:italic 700 clamp(9px,1.05vw,15px)/1.1 Georgia,serif;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -184,7 +184,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-ir]'
 /* modo lienzo (horizontal) o columna (vertical) */
 var app=document.getElementById('app');
 function modo(){var h=(tg&&tg.initData&&tg.viewportStableHeight)||innerHeight;var ancho=innerWidth>=700&&innerWidth/h>=1.25;
- app.className=ancho?'lienzo':'columna';}
+ app.className='lienzo';}
 alto();modo();addEventListener('resize',function(){alto();modo();});
 
 /* países */
