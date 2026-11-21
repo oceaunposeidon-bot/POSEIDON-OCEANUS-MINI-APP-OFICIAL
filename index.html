@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><script>/* busca las imágenes en la raíz o en la carpeta assets */(function(){try{var x=new XMLHttpRequest();x.open("HEAD","pos-diseno.jpg",false);x.send();if(x.status>=400)document.write('<base href="assets/">');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#031631">
 <title>Poseidón Oceanus</title>
@@ -34,7 +34,7 @@ a.r:hover,a.r:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px #ffd56b
 .lienzo .r{background-image:none!important;position:absolute;left:calc(var(--x) / 15.36 * 1%);top:calc(var(--y) / 10.24 * 1%);width:calc(var(--w) / 15.36 * 1%);height:calc(var(--h) / 10.24 * 1%);aspect-ratio:auto;background:none}
 .lienzo .titulo,.lienzo .fila-titulo{display:none}
 .lienzo .paises{position:absolute;left:2.2%;top:41.4%;width:87.2%;height:10.6%;background:#03122a;border-radius:6px}
-.lienzo .audio{position:absolute;left:2.2%;top:33.1%;width:95.7%;height:4.6%}
+.lienzo .audio{position:absolute;left:1.9%;top:32.4%;width:96.3%;height:6.2%}
 .lienzo .bloque{display:contents}
 
 /* ===== modo COLUMNA (celular / vertical) ===== */
@@ -90,6 +90,7 @@ a.r:hover,a.r:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px #ffd56b
 #aviso.v{opacity:1}
 @media(max-height:640px){.columna{gap:3px}.columna .arenas .r{height:40px}.columna .audio{height:38px}.columna .paises{min-height:50px}.titulo{font-size:11px}}
 .columna .masp{display:none}
+.lienzo .audio{background:linear-gradient(180deg,#0b2446,#020b1c)!important}
 </style>
 </head>
 <body>
